@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "cflow",
+  "version": "0.0.1",
+  "description": "A set of libraries for a secret project",
+  "keywords": [
+    "cflow"
+  ],
+  "license": "MIT",
+  "author": "miran248",
+  "homepage": "https://github.com/miran248/cflow#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miran248/cflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miran248/cflow/issues"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  },
+}
