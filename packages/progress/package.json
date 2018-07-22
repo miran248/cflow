@@ -45,6 +45,5 @@
   },
   "jest": {
     "rootDir": "./test"
-  },
-  "dependencies": {}
+  }
 }
