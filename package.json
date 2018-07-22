@@ -16,9 +16,6 @@
   "bugs": {
     "url": "https://github.com/miran248/cflow/issues"
   },
-  "scripts": {
-    "test": "jest"
-  },
   "devDependencies": {
     "lerna": "^2.11.0"
   },
