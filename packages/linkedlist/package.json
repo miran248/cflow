@@ -45,5 +45,8 @@
   },
   "jest": {
     "rootDir": "./test"
+  },
+  "dependencies": {
+    "@cflow/decorators": "^0.0.1"
   }
 }
