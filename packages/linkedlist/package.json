@@ -1,6 +1,6 @@
 {
   "name": "@cflow/linkedlist",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Doubly linked list",
   "main": "./lib/index.js",
   "repository": {
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/miran248/cflow#readme",
   "dependencies": {
-    "@cflow/decorators": "^0.0.1"
+    "@cflow/decorators": "^0.0.2"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@cflow/progress",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ascii progress bar without dependencies",
   "main": "./lib/index.js",
   "repository": {
