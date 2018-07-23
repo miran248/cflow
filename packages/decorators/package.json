@@ -1,6 +1,6 @@
 {
   "name": "@cflow/decorators",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Composable decorators for new or existing objects",
   "main": "./lib/index.js",
   "repository": {
