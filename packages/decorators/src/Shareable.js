@@ -16,7 +16,8 @@ export default class Shareable extends Decorator {
   release = () => {
     --this.count;
 
-    if(this.owner && this.count === 1)
+    if(this.owner && this.count === 1
+    && has(this.owner, Recyclable))
       return get(this.owner, Recyclable).recycle();
 
     if(this.count > 0)

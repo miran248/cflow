@@ -5,8 +5,8 @@ const define = (decoratorClass) => {
   decoratorClass[key] = Symbol(decoratorClass.name);
 };
 
-export const decorate = Symbol();
-export const key = Symbol();
+export const decorate = Symbol("decorate");
+export const key = Symbol("key");
 
 export default class Decorator {
   target = null;

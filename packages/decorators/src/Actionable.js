@@ -1,8 +1,9 @@
 import Decorator from "./Decorator";
 
+export const action = Symbol("action");
+
 export default class Actionable extends Decorator {
   before = null;
-
   after = null;
 
   constructor(before, after) {
@@ -12,21 +13,13 @@ export default class Actionable extends Decorator {
     this.after = after;
   }
 
-  perform = (params, action) => {
-    if(this.before) {
-      if(params)
-        this.before(...params);
-      else
-        this.before();
-    }
+  [action] = (action, ...params) => {
+    if(this.before)
+      this.before(...params);
 
     action();
 
-    if(this.after) {
-      if(params)
-        this.after(...params);
-      else
-        this.after();
-    }
-  };
+    if(this.after)
+      this.after(...params);
+  }
 }

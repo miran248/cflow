@@ -1,4 +1,4 @@
-import Actionable from "./Actionable";
+import Actionable, { action } from "./Actionable";
 
 export default class Reusable extends Actionable {
   owner = null;
@@ -7,5 +7,8 @@ export default class Reusable extends Actionable {
     super(before, after);
   }
 
-  reuse = (params) => this.perform(params, () => {});
+  reuse = (...params) => this[action](
+    () => {},
+    ...params
+  );
 }

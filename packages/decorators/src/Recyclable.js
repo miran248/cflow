@@ -1,4 +1,4 @@
-import Actionable from "./Actionable";
+import Actionable, { action } from "./Actionable";
 
 export default class Recyclable extends Actionable {
   owner = null;
@@ -7,5 +7,15 @@ export default class Recyclable extends Actionable {
     super(before, after);
   }
 
-  recycle = () => this.perform(null, () => this.owner.store(this.target));
+  recycle = (...params) => {
+    const { owner } = this;
+
+    if(!owner)
+      throw new Error("owner is required");
+
+    this[action](
+      () => owner.store(this.target),
+      ...params
+    );
+  };
 }

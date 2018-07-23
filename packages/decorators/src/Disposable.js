@@ -1,11 +1,14 @@
-import Actionable from "./Actionable";
+import Actionable, { action } from "./Actionable";
 
 export default class Disposable extends Actionable {
   constructor(before, after) {
     super(before, after);
   }
 
-  dispose = () => this.perform(null, () => {
-    console.log("TODO: Disposable dispose: perform cleanup!");
-  });
+  dispose = (...params) => this[action](
+    () => {
+      console.log("TODO: Disposable dispose: perform cleanup!");
+    },
+    ...params
+  );
 }

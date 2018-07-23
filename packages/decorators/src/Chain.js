@@ -7,7 +7,7 @@ export default class Chain extends Decorator {
 
   index = 0;
 
-  constructor(links, resetCallback) {
+  constructor(links, resetCallback = null) {
     super();
 
     this.links = links;
@@ -22,14 +22,19 @@ export default class Chain extends Decorator {
   }
 
   next() {
-    this.set(this.index + 1);
+    return this.set(this.index + 1);
   }
 
   set(index) {
+    if(index >= this.links.length)
+      return false;
+
     this.index = index;
+
+    return true;
   }
 
-  run(value) {
-    this.links[this.index](this, value);
+  run(...params) {
+    return this.links[this.index](this, ...params);
   }
 }
