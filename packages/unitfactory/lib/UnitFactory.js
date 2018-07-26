@@ -40,21 +40,24 @@ var UnitFactory = function () {
       return this.pool.length === 0;
     }
   }, {
+    key: "count",
+    value: function count() {
+      return this.pool.length;
+    }
+  }, {
     key: "take",
     value: function take() {
-      var item = this.takeWithoutParams();
+      var _get;
 
-      for (var _len = arguments.length, params = Array(_len), _key = 0; _key < _len; _key++) {
-        params[_key] = arguments[_key];
-      }
+      var item = this._take();
 
-      if ((0, _decorators.has)(item, _decorators.Reusable)) (0, _decorators.get)(item, _decorators.Reusable).reuse(params);
+      if ((0, _decorators.has)(item, _decorators.Reusable)) (_get = (0, _decorators.get)(item, _decorators.Reusable)).reuse.apply(_get, arguments);
 
       return item;
     }
   }, {
-    key: "takeWithoutParams",
-    value: function takeWithoutParams() {
+    key: "_take",
+    value: function _take() {
       if (this.isEmpty()) this.produce(10);
 
       return this.pool.shift();
@@ -72,7 +75,7 @@ var UnitFactory = function () {
     value: function create() {
       var item = new this.T();
 
-      (0, _decorators.get)(item, _decorators.Recyclable).owner = this;
+      if ((0, _decorators.has)(item, _decorators.Recyclable)) (0, _decorators.get)(item, _decorators.Recyclable).owner = this;
 
       ++this.created;
 

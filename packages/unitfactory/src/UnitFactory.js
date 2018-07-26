@@ -26,16 +26,20 @@ export default class UnitFactory {
     return this.pool.length === 0;
   }
 
+  count() {
+    return this.pool.length;
+  }
+
   take(...params) {
-    const item = this.takeWithoutParams();
+    const item = this._take();
 
     if(has(item, Reusable))
-      get(item, Reusable).reuse(params);
+      get(item, Reusable).reuse(...params);
 
     return item;
   }
 
-  takeWithoutParams() {
+  _take() {
     if(this.isEmpty())
       this.produce(10);
 
@@ -50,7 +54,8 @@ export default class UnitFactory {
   create() {
     const item = new this.T();
 
-    get(item, Recyclable).owner = this;
+    if(has(item, Recyclable))
+      get(item, Recyclable).owner = this;
 
     ++this.created;
 
