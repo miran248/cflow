@@ -56,8 +56,13 @@ export default class Container extends Service {
       );
   }
 
-  terminate = () => Promise.resolve(this.ready)
-    .then(
-      () => this._stop()
-    );
+  terminate = () => {
+    if(this.owner)
+      return;
+
+    return Promise.resolve(this.ready)
+      .then(
+        () => this._stop()
+      );
+  };
 }
