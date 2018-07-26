@@ -1,6 +1,6 @@
 {
   "name": "@cflow/unitfactory",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Object pool factory",
   "main": "./lib/index.js",
   "repository": {
