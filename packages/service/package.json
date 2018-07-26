@@ -1,6 +1,6 @@
 {
   "name": "@cflow/service",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Base building block for composable component based architecture",
   "main": "./lib/index.js",
   "repository": {
