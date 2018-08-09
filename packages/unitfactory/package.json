@@ -1,6 +1,6 @@
 {
   "name": "@cflow/unitfactory",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Object pool factory",
   "main": "./lib/index.js",
   "module": "./src/index.js",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/miran248/cflow#readme",
   "dependencies": {
-    "@cflow/decorators": "^0.1.1"
+    "@cflow/decorators": "^0.2.2"
   }
 }
