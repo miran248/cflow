@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "ascii progress bar without dependencies",
   "main": "./lib/index.js",
+  "module": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/miran248/cflow.git"

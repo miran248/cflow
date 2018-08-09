@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "Declarative d3 based charting framework",
   "main": "./lib/index.js",
+  "module": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/miran248/cflow.git"
@@ -17,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/miran248/cflow/issues"
   },
-  "homepage": "https://github.com/miran248/cflow#readme",
-  "dependencies": {
-    "chalk": "^2.4.1"
-  }
+  "homepage": "https://github.com/miran248/cflow#readme"
 }

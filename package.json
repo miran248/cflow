@@ -21,22 +21,23 @@
     "test:watch": "onchange 'packages/*/src/**/*.js' 'packages/*/__tests__/**/*.js' -i -- yarn test",
     "test": "jest --passWithNoTests --coverage --verbose -i",
     "build": "lerna exec --parallel -- babel src -d lib",
-    "prepublish": "yarn clean && yarn test && yarn build"
+    "prepublish": "yarn clean && yarn build && yarn test"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "cz-conventional-changelog": "^2.1.0",
-    "jest": "^23.2.0",
-    "lerna": "^2.11.0",
-    "onchange": "^4.0.0"
+    "jest": "^23.4.2",
+    "lerna": "^3.0.0-rc.0",
+    "onchange": "^4.1.0"
   },
   "workspaces": [
     "packages/*"
   ],
   "jest": {
-    "resetModules": true
+    "resetModules": true,
+    "testEnvironment": "node"
   },
   "dependencies": {},
   "config": {
