@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Object pool factory",
   "main": "./lib/index.js",
+  "module": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/miran248/cflow.git"

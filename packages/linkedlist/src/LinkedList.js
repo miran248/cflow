@@ -1,5 +1,5 @@
 import decorate, {
-  get, Linkable, Recyclable,
+  get, Linkable, Recyclable, Serializable
 } from "@cflow/decorators";
 
 export default class LinkedList {
@@ -11,16 +11,21 @@ export default class LinkedList {
 
   constructor() {
     decorate(this, [
-      new Linkable(),
-      new Recyclable(() => {
-        let node = null;
+      new Linkable,
+      new Recyclable(
+        () => {
+          let node = null;
 
-        while(this.head) {
-          node = this.detachHead();
+          while(this.head) {
+            node = this.detachHead();
 
-          get(node, Recyclable).recycle();
+            get(node, Recyclable).recycle();
+          }
         }
-      }),
+      ),
+      new Serializable(
+        this.serialize.bind(this)
+      ),
     ]);
   }
 
@@ -141,6 +146,22 @@ export default class LinkedList {
     --this.count;
 
     return item;
+  }
+
+  serialize() {
+    var item = this.head;
+
+    var items = [];
+
+    while(item) {
+      items.push(
+        get(item, Serializable).serialize()
+      );
+
+      item = get(item, Linkable).next;
+    }
+
+    return items;
   }
 
   // [Symbol.iterator]() {

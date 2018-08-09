@@ -32,7 +32,7 @@ var LinkedList = function () {
 
         (0, _decorators.get)(node, _decorators.Recyclable).recycle();
       }
-    })]);
+    }), new _decorators.Serializable(this.serialize.bind(this))]);
   }
 
   _createClass(LinkedList, [{
@@ -140,6 +140,21 @@ var LinkedList = function () {
       --this.count;
 
       return item;
+    }
+  }, {
+    key: "serialize",
+    value: function serialize() {
+      var item = this.head;
+
+      var items = [];
+
+      while (item) {
+        items.push((0, _decorators.get)(item, _decorators.Serializable).serialize());
+
+        item = (0, _decorators.get)(item, _decorators.Linkable).next;
+      }
+
+      return items;
     }
 
     // [Symbol.iterator]() {

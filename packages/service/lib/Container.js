@@ -36,6 +36,8 @@ var Container = function (_Service) {
     _this.dependencies = {};
 
     _this.terminate = function () {
+      if (_this.owner) return;
+
       return Promise.resolve(_this.ready).then(function () {
         return _this._stop();
       });
